@@ -45,10 +45,33 @@ function _G.MacronizeNextKey()
   return k .. "\u{0304}"
 end
 
+local superscript_precomposed = {
+  -- numbers
+  ["0"] = "⁰", ["1"] = "¹", ["2"] = "²", ["3"] = "³", ["4"] = "⁴", ["5"] = "⁵",
+  ["6"] = "⁶", ["7"] = "⁷", ["8"] = "⁸", ["9"] = "⁹",
+  -- operators
+  ["+"] = "⁺", ["-"] = "⁻",
+
+  -- letters
+  ["n"] = "ⁿ", ["a"] = "ᵃ", ["x"] = "ˣ", ["y"] = "ʸ", ["z"] = "ᶻ",
+}
+function _G.ExponentNextNum()
+  local k = vim.fn.getcharstr()
+  local pre = superscript_precomposed[k]
+  if pre then
+    return pre
+  end
+end
+
 -- insert x with macron (or x bar) with <C-g>-, x
 vim.keymap.set("i", "<C-g>-", "v:lua.MacronizeNextKey()", {
   expr = true,
   desc = "Insert next key with macron",
+})
+-- insert 1 as exponent with <C-g>^, 1
+vim.keymap.set("i", "<C-g>^", "v:lua.ExponentNextNum()", {
+  expr = true,
+  desc = "Insert next key as exponent",
 })
 
 vim.o.timeout = true
