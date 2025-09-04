@@ -29,19 +29,8 @@ vim.api.nvim_create_autocmd("QuickFixCmdPost", {
 })
 
 -- custom digraphs
--- Precomposed forms where they exist; fallback to combining U+0304.
-local macron_precomposed = {
-  a = "ā", e = "ē", i = "ī", o = "ō", u = "ū", y = "ȳ",
-  A = "Ā", E = "Ē", I = "Ī", O = "Ō", U = "Ū", Y = "Ȳ",
-}
-
 function _G.MacronizeNextKey()
   local k = vim.fn.getcharstr()  -- next typed key as a UTF-8 string
-  -- If it’s one of the common vowels (or Y), use precomposed.
-  local pre = macron_precomposed[k]
-  if pre then
-    return pre
-  end
   return k .. "\u{0304}"
 end
 
