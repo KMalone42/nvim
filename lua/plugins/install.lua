@@ -6,6 +6,7 @@ require('lazy').setup({
     "ellisonleao/gruvbox.nvim",
     'tpope/vim-fugitive',
     "cbochs/grapple.nvim",
+    'brianhuster/live-preview.nvim',
 
     {
         "m4xshen/autoclose.nvim",
