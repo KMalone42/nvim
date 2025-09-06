@@ -23,4 +23,5 @@ do
     end
     vim.keymap.set('n', "<leader>n", function() jumpToError(1)  end, {desc="Jump to next diagnostic"})
     vim.keymap.set('n', "<leader>N", function() jumpToError(-1) end, {desc="Jump to previous diagnostic"})
+    --vim.keymap.set('n', "<leader>d", vim.diagnostic.open_float(), {desc="Get diagnostic of hovered text"})
 end
