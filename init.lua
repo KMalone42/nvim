@@ -67,3 +67,9 @@ vim.o.timeout = true
 vim.o.timeoutlen = 1500
 vim.o.ttimeout = true
 vim.o.ttimeoutlen = 50
+
+
+-- Load per-ft Lua snippets from your folder
+require("luasnip.loaders.from_lua").lazy_load({
+  paths = vim.fn.expand("~/.config/nvim/lua/snippets"),
+})

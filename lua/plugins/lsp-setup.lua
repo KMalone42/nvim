@@ -36,3 +36,19 @@ require('neodev').setup()
 require('mason-lspconfig').setup {
     ensure_installed = vim.tbl_keys(servers),
 }
+
+-- vim.diagnostics.config({virtual_text=false})
+-- keep errors but hide warnings
+vim.diagnostic.config({
+  severity_sort = true,
+  virtual_text = {
+    severity = { min = vim.diagnostic.severity.ERROR }
+  },
+  signs = {
+    severity = { min = vim.diagnostic.severity.ERROR }
+  },
+  underline = {
+    severity = { min = vim.diagnostic.severity.ERROR }
+  },
+})
+
