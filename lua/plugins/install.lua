@@ -8,10 +8,10 @@ require('lazy').setup({
     "cbochs/grapple.nvim",
     'brianhuster/live-preview.nvim',
 
-    {
-        "m4xshen/autoclose.nvim",
-        config = (function() require("autoclose").setup() end)
-    },
+    --{
+        --"m4xshen/autoclose.nvim",
+        --config = (function() require("autoclose").setup() end)
+    --},
 
     {
         "echasnovski/mini.align",
