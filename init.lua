@@ -11,12 +11,21 @@ require("plugin-keymaps")
 
 require("file-types")
 
--- Run current Python file with :make
+-- Nix autocmd
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "nix",
+    callback = function()
+	    vim.opt_local.shiftwidth = 2
+	    vim.opt_local.tabstop = 2
+	end, 
+})
+
+-- Python autocmd
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "python",
   callback = function()
+    -- :make it work
     vim.opt_local.makeprg = "python3 %"
-    -- Parse lines like:   File "script.py", line 12, in <module>
     vim.opt_local.errorformat =
       [[%E  File "%f", line %l,%C%p^,%Z%m,%-G%.%#]]
   end,
