@@ -18,3 +18,17 @@ Added to plugins install.lua
 ```
 additional notes: 
 use <leader>m to interface with this extension
+
+
+
+# Notes for NixOs
+
+install `lua-language-server` instead of letting Mason install
+
+
+After nix install run:
+```bash
+rm -rf ~/.local/share/nvim/mason/packages/lua-language-server \
+       ~/.local/share/nvim/mason/bin/lua-language-server
+```
+

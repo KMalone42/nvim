@@ -1,5 +1,4 @@
-require('mason').setup()
-require('mason-lspconfig').setup()
+require('neodev').setup() -- not sure what this is really
 
 -- how to edit: 
 -- add lsp server name (NOT ANSIBLE PACKAGE)
@@ -24,17 +23,9 @@ local servers = {
     cssls = {},
     awk_ls = {},
     systemd_ls = {},
-    --perl-debug-adapter = {},
     perlnavigator = {},
     codebook = {},
-}
-
-vim.lsp.enable('glsl_analyzer')
-
-require('neodev').setup()
-
-require('mason-lspconfig').setup {
-    ensure_installed = vim.tbl_keys(servers),
+    glsl_analyzer = {},
 }
 
 -- vim.diagnostics.config({virtual_text=false})
@@ -52,3 +43,16 @@ vim.diagnostic.config({
   },
 })
 
+-- use servers for settings, but build a separate list for Mason:
+local ensure = vim.tbl_keys(servers)
+for i, name in ipairs(ensure) do
+  if name == "lua_ls" then
+    table.remove(ensure, i)
+    break
+  end
+end
+
+require('mason').setup()
+require('mason-lspconfig').setup {
+    ensure_installed = ensure,
+}

@@ -4,7 +4,6 @@ require("langs").setup()
 require("core.colors")
 require("plugins")
 require("plugin-keymaps")
-require("file-types")
 
 vim.opt.number = true
 vim.opt.relativenumber = true
