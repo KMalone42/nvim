@@ -15,7 +15,7 @@ local M = {}
 ---   opts.makeprg     = optional :make program
 ---   opts.errorformat = optional errorformat
 ---   opts.style_hint  = optional style hint string
-function M.setup()
+function M.setup_language(opts)
   local pattern     = opts.pattern
   local indent      = opts.indent or 4
   local colorcolumn = opts.colorcolumn or "80"
@@ -35,7 +35,7 @@ function M.setup()
       vim.bo[buf].tabstop     = indent      -- how many spaces a <Tab> is
       vim.bo[buf].softtabstop = indent      -- how many spaces <BS> deletes
       vim.bo[buf].textwidth   = 0           --
-      vim.wo[buf].colorcolumn = colorcolumn -- column ruler
+      vim.wo.colorcolumn = colorcolumn      -- column ruler
 
       -- :make setup
       if makeprg then
