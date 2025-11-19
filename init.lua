@@ -1,8 +1,7 @@
 -- init.lua
-require("plugins")
+require("config.lazy")
 require("langs").setup()
 require("core.colors")
-require("plugins")
 require("plugin-keymaps")
 
 vim.opt.number = true
@@ -55,4 +54,3 @@ vim.opt.splitright = true
     ---- on linux will default to /bin/bash now
     --opt.shell = '/bin/bash'
 --end
-
