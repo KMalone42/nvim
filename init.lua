@@ -1,7 +1,10 @@
 -- init.lua
+vim.g.mapleader = " "
+vim.g.maplocalleader = ' '
+
 require("config.lazy")
+require("config.colors")
 require("langs").setup()
-require("core.colors")
 require("plugin-keymaps")
 
 vim.opt.number = true
@@ -14,8 +17,6 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = ' '
 vim.keymap.set('n', '<leader>o', ':update<CR> :source<CR>')
 vim.keymap.set('n', '<leader>w', ':write<CR>')
 vim.keymap.set('n', '<leader>q', ':quit<CR>')
