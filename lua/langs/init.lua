@@ -7,6 +7,7 @@ local language_modules = {
     "langs.lua_lang",
     "langs.nix",
     "langs.py",
+    "langs.html",
 }
 
 function M.setup()
