@@ -53,5 +53,6 @@ vim.lsp.enable({
   "awk_ls",
   "jdtls",
   "kotlin_language_server",
+  "rust_analyzer",
 })
 
