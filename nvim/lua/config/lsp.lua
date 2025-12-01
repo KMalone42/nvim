@@ -3,13 +3,16 @@
 
 -- Global on_attach (keymaps etc.)
 local function on_attach(client, bufnr)
-  local map = function(mode, lhs, rhs)
-    vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, silent = true })
-  end
+  local map = vim.keymap.set
+  local opts = { buffer = 0, silent = true }
 
-  map("n", "gd", vim.lsp.buf.definition)
+  map("n", "gd", vim.lsp.buf.definition,     vim.tbl_extend("force", opts, { desc = "Go to definition" }))
+  map("n", "gD", vim.lsp.buf.declaration,    vim.tbl_extend("force", opts, { desc = "Go to declaration" }))
+  map("n", "gi", vim.lsp.buf.implementation, vim.tbl_extend("force", opts, { desc = "Go to implementation (inheritance)" }))
+  map("n", "gt", vim.lsp.buf.type_definition,vim.tbl_extend("force", opts, { desc = "Go to type" }))
+  map("n", "gr", vim.lsp.buf.references,     vim.tbl_extend("force", opts, { desc = "List references" }))
+
   map("n", "K",  vim.lsp.buf.hover)
-  map("n", "gr", vim.lsp.buf.references)
   map("n", "<leader>rn", vim.lsp.buf.rename)
   map("n", "<leader>ca", vim.lsp.buf.code_action)
 end
@@ -29,6 +32,7 @@ vim.lsp.config("*", {
 -- 2) Per-server tweaks (only where you need them)
 
 -- Lua / Neovim config
+-- I don't think this is actually doing anything in particular.
 vim.lsp.config("lua_ls", {
   settings = {
     Lua = {
@@ -39,9 +43,7 @@ vim.lsp.config("lua_ls", {
   },
 })
 
--- (Everything else can use nvim-lspconfig's built-in defaults)
-
--- 3) Enable servers so they auto-start on matching filetypes/root
+-- Enable servers so they auto-start on matching filetypes/root
 vim.lsp.enable({
   "pyright",
   "lua_ls",
