@@ -1,0 +1,10 @@
+--return {
+  --"ray-x/lsp_signature.nvim",
+  --event = "LspAttach",
+  --opts = {
+    --bind = true,
+    --hint_enable = true,        -- inline hint (optional)
+    --floating_window = true,    -- popup signature window
+    --handler_opts = { border = "rounded" },
+  --},
+--}
