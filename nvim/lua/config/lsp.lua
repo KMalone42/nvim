@@ -47,10 +47,10 @@ vim.lsp.config("lua_ls", {
 vim.lsp.enable({
   "pyright",
   "lua_ls",
-  "systemd-language-server",
+  "systemd_ls",
   "bashls",
   "vimls",
-  "ts_ls",                  -- was tsserver
+  "ts_ls",
   "dockerls",
   "awk_ls",
   "jdtls",
@@ -58,5 +58,7 @@ vim.lsp.enable({
   "rust_analyzer",
   "eslint",
   "tailwindcss",
+  "nimls",
+  "nixd",
 })
 
