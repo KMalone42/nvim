@@ -24,7 +24,6 @@ return {
       "rust_analyzer",
       "eslint",
       "tailwindcss",
-      "nimls",
       "nixd",
     },
     automatic_installation = true,
