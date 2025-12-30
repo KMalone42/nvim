@@ -44,6 +44,7 @@ vim.lsp.config("lua_ls", {
 })
 
 -- Enable servers so they auto-start on matching filetypes/root
+--
 vim.lsp.enable({
   "pyright",
   "lua_ls",
@@ -59,5 +60,6 @@ vim.lsp.enable({
   "eslint",
   "tailwindcss",
   "nixd",
+  "ccls",
 })
 

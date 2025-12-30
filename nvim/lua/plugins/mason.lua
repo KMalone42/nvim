@@ -25,6 +25,7 @@ return {
       "eslint",
       "tailwindcss",
       "nixd",
+      "ccls",
     },
     automatic_installation = true,
   },
