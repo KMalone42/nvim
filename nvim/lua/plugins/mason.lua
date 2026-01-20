@@ -26,6 +26,7 @@ return {
       "tailwindcss",
       "nixd",
       "ccls",
+      "perlnavigator",
     },
     automatic_installation = true,
   },

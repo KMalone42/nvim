@@ -61,5 +61,6 @@ vim.lsp.enable({
   "tailwindcss",
   "nixd",
   "ccls",
+  "perlnavigator",
 })
 
