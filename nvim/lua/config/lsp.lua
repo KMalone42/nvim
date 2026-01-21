@@ -63,5 +63,6 @@ vim.lsp.enable({
 --"ccls",
   "clangd",
   "perlnavigator",
+  "sqlls",
 })
 

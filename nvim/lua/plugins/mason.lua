@@ -28,6 +28,7 @@ return {
       --"ccls",
       "clangd",
       "perlnavigator",
+      "sqlls",
     },
     automatic_installation = true,
   },
