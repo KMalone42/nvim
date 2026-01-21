@@ -60,7 +60,8 @@ vim.lsp.enable({
   "eslint",
   "tailwindcss",
   "nixd",
-  "ccls",
+--"ccls",
+  "clangd",
   "perlnavigator",
 })
 
