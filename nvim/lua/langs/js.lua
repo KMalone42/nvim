@@ -5,7 +5,7 @@ local M = {}
 
 function M.setup()
   template.setup_language{
-    pattern     = "javascript",
+    pattern     = "js",
     indent      = 2,
     colorcolumn = "100",
     makeprg     = "node %",

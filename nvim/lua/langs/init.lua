@@ -8,6 +8,7 @@ local language_modules = {
     "langs.nix",
     "langs.py",
     "langs.html",
+    "lange.js",
 }
 
 function M.setup()

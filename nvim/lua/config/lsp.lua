@@ -43,8 +43,25 @@ vim.lsp.config("lua_ls", {
   },
 })
 
+vim.lsp.config("ts_ls", {
+  root_dir = function(bufnr, on_dir)
+    local fname = vim.api.nvim_buf_get_name(bufnr)
+    local root = vim.fs.root(fname, {
+      "package.json",
+      "tsconfig.json",
+      "jsconfig.json",
+      "deno.json",
+      "deno.jsonc",
+      ".git",
+    })
+    on_dir(root or vim.fn.getcwd())
+  end,
+})
+
+
+
 -- Enable servers so they auto-start on matching filetypes/root
---
+-- :h lspconfig-all
 vim.lsp.enable({
   "pyright",
   "lua_ls",
