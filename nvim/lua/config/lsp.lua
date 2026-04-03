@@ -76,7 +76,6 @@ vim.lsp.enable({
   "rust_analyzer",
   "eslint",
   "tailwindcss",
-  "nixd",
 --"ccls",
   "clangd",
   "perlnavigator",
